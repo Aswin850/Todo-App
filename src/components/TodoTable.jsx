@@ -2,7 +2,7 @@ import React from "react";
 
 import TodoRowItem from "./TodoRowItem";
 
-function TodoTable({ props }) {
+function TodoTable({ props, deleteTodo }) {
   return (
     <table className="table table-hover">
       <thead>
@@ -14,7 +14,7 @@ function TodoTable({ props }) {
       </thead>
       <tbody>
         {props.map((data) => (
-          <TodoRowItem todo={data} key={data.no} />
+          <TodoRowItem deleteTodo={deleteTodo} todo={data} key={data.no} />
         ))}
       </tbody>
     </table>
