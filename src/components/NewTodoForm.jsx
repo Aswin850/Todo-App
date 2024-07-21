@@ -1,44 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
-function NewTodoForm() {
+function NewTodoForm({ addTodo }) {
+  const [description, setDescription] = useState("");
+  const [assigned, setAssigned] = useState("");
+
+  const submitTodo = () => {
+    if (assigned === "" || description === "") {
+      alert("Please enter the required filed");
+    }
+    if (assigned !== "" && description !== "") {
+      addTodo(assigned, description);
+      setDescription("");
+      setAssigned("");
+    }
+  };
+
   return (
-    <>
+    <div className="mt-4">
       <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Email address
+        <div className="mb-3">
+          <label for="exampleInputEmail1" className="form-label">
+            Assigned
           </label>
           <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            type="text"
+            className="form-control"
+            required
+            onChange={(e) => setAssigned(e.target.value)}
+            value={assigned}
           />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
-            Password
-          </label>
-          <input
-            type="password"
+          <label className="form-label">Description</label>
+          <textarea
+            type="text"
             class="form-control"
-            id="exampleInputPassword1"
+            rows={3}
+            required
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
           />
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">
-          Submit
+        <button type="button" class="btn btn-primary" onClick={submitTodo}>
+          Add todo
         </button>
       </form>
-    </>
+    </div>
   );
 }
 
