@@ -14,14 +14,18 @@ function App() {
   const [todos, setTodos] = useState(todosData);
 
   const addTodo = (ass, des) => {
+    let rowNumber = 0;
     if (todos.length > 0) {
-      const newTodo = {
-        no: todos.length + 1,
-        description: des,
-        assigned: ass,
-      };
-      setTodos((todos) => [...todos, newTodo]);
+      rowNumber = todos[todos.length - 1].no + 1;
+    } else {
+      rowNumber = 1;
     }
+    const newTodo = {
+      no: rowNumber,
+      description: des,
+      assigned: ass,
+    };
+    setTodos((todos) => [...todos, newTodo]);
   };
 
   return (
