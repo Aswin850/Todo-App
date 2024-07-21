@@ -5,11 +5,11 @@ import NewTodoForm from "./components/NewTodoForm";
 
 function App() {
   const todosData = [
-    { no: 1, description: "Feed puppy", assigned: "Iceu" },
-    { no: 2, description: "Get Haircut", assigned: "Aswin" },
-    { no: 3, description: "Water plants", assigned: "Ashok" },
-    { no: 4, description: "Make dinner", assigned: "Iceu" },
-    { no: 5, description: "Charge phone", assigned: "Ashok" },
+    { no: 1, description: "Feed puppy", assigned: "User1" },
+    { no: 2, description: "Get Haircut", assigned: "User2" },
+    { no: 3, description: "Water plants", assigned: "User3" },
+    { no: 4, description: "Make dinner", assigned: "User1" },
+    { no: 5, description: "Charge phone", assigned: "User2" },
   ];
   const [todos, setTodos] = useState(todosData);
   const [showAddTodoForm, setShowAddTodoForm] = useState(false);
