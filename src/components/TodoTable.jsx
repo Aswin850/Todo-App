@@ -4,7 +4,7 @@ import TodoRowItem from "./TodoRowItem";
 
 function TodoTable({ props }) {
   return (
-    <table class="table table-hover">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -14,7 +14,7 @@ function TodoTable({ props }) {
       </thead>
       <tbody>
         {props.map((data) => (
-          <TodoRowItem todo={data} />
+          <TodoRowItem todo={data} key={data.no} />
         ))}
       </tbody>
     </table>

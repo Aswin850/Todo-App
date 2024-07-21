@@ -19,7 +19,7 @@ function NewTodoForm({ addTodo }) {
     <div className="mt-4">
       <form>
         <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">
+          <label htmlFor="exampleInputEmail1" className="form-label">
             Assigned
           </label>
           <input
@@ -30,18 +30,18 @@ function NewTodoForm({ addTodo }) {
             value={assigned}
           />
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <label className="form-label">Description</label>
           <textarea
             type="text"
-            class="form-control"
+            className="form-control"
             rows={3}
             required
             onChange={(e) => setDescription(e.target.value)}
             value={description}
           />
         </div>
-        <button type="button" class="btn btn-primary" onClick={submitTodo}>
+        <button type="button" className="btn btn-primary" onClick={submitTodo}>
           Add todo
         </button>
       </form>
